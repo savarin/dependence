@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convert</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="app">
+        <form action="/" method="post">
+            <div class="input-group">
+                <input type="text" id="urlInput" name="urlInput" placeholder="Enter URL here..." value="{{ url_text }}">
+                <button type="submit">convert</button>
+            </div>
+        </form>
+        {% if svg_content %}
+        <div id="svgResult">
+            {{ svg_content|safe }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
