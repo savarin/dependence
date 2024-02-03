@@ -1,6 +1,7 @@
 import os
 import subprocess
 from html import escape
+import platform
 
 from flask import Flask, render_template, request, url_for
 from markupsafe import Markup
@@ -19,9 +20,10 @@ def index():
 
         import os
         import sys
-        sys.stderr.write(f"{os.name}")
+        print(f"HERE HERE HERE {os.name} {platform.system()} {platform.release()} {platform.version()} {platform.platform()}")
+        sys.stderr.write(f"HERE HERE HERE {os.name} {platform.system()} {platform.release()} {platform.version()} {platform.platform()}")
 
-        subprocess.run(['brew', 'install', 'git'])
+        subprocess.run(['yum', 'install', 'git'])
 
         # Clone the GitHub repo (you may need to handle authentication here)
         subprocess.run(['git', 'clone', 'https://github.com/jxnl/instructor.git'])
